@@ -9,8 +9,8 @@
 
 char *internalTemperatureSysFile = "/sys/class/thermal/thermal_zone0/temp";
 const int maxFileLength = 8192;
-const int minInternalTemperature = 0 * 10;	// Multiplied by 10, we store 38,5 as 385
-const int maxInternalTemperature = 100 * 10;	// Multiplied by 10, we store 38,5 as 385
+const int minInternalTemperature = 0 * 100;	// Multiplied by 10, we store 38,52 as 3852
+const int maxInternalTemperature = 100 * 100;	// Multiplied by 10, we store 38,52 as 3852
 
 int getFileSize(char *fileName)
 {
@@ -28,7 +28,7 @@ int validatePiTemperature(char *temperatureData)
 		return 0;
 	}
 	temperature = atoi(temperatureData);
-	temperature = (int)(temperature / 100);
+	temperature = (int)(temperature / 10);
 	if ((temperature <= minInternalTemperature) || (temperature > maxInternalTemperature)) {
 		temperature = 0;
 	}

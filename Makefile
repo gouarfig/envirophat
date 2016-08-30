@@ -1,8 +1,8 @@
 CC=gcc
 CFLAGS=-c -Wall -O2
 LDFLAGS=-l wiringPi -l wiringPiDev -l curl -lm
-SOURCES_MAIN=envirophat.c pi.c pi_temp.c sensor.c bmp180.c bmp280.c
-HEADERS_MAIN=pi.h pi_temp.h sensor.h bmp180.h bmp280.h
+SOURCES_MAIN=envirophat.c pi.c pi_temp.c sensor.c bmp180.c bmp280.c curl_send.c
+HEADERS_MAIN=pi.h pi_temp.h sensor.h bmp180.h bmp280.h curl_send.h
 OBJECTS_MAIN=$(SOURCES_MAIN:.c=.o)
 EXECUTABLE_MAIN=envirophat
 
