@@ -3,3 +3,4 @@
 *.o
 bmp280
 get_temp
+envirophat
