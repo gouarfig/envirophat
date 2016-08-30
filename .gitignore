@@ -1,0 +1,5 @@
+.vscode
+
+*.o
+bmp280
+get_temp
