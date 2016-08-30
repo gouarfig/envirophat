@@ -1,10 +1,10 @@
 CC=gcc
 CFLAGS=-c -Wall -O2
-LDFLAGS=-l wiringPi -l wiringPiDev -lm
-SOURCES_MAIN=get_temp.c pi.c pi_temp.c sensor.c bmp180.c
-HEADERS_MAIN=pi.h pi_temp.h sensor.h bmp180.h
+LDFLAGS=-l wiringPi -l wiringPiDev -l curl -lm
+SOURCES_MAIN=envirophat.c pi.c pi_temp.c sensor.c bmp180.c bmp280.c
+HEADERS_MAIN=pi.h pi_temp.h sensor.h bmp180.h bmp280.h
 OBJECTS_MAIN=$(SOURCES_MAIN:.c=.o)
-EXECUTABLE_MAIN=get_temp
+EXECUTABLE_MAIN=envirophat
 
 all: $(SOURCES_MAIN) $(EXECUTABLE_MAIN)
 
