@@ -10,10 +10,10 @@
 
 #include "bmp280.h"
 
-int cal_t1 = 27504;
+uint cal_t1 = 27504;
 int cal_t2 = 26435;
 int cal_t3 = -1000;
-int cal_p1 = 36477;
+uint cal_p1 = 36477;
 int cal_p2 = -10685;
 int cal_p3 = 3024;
 int cal_p4 = 2855;
