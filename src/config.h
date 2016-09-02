@@ -13,7 +13,7 @@ extern "C" {
 #endif
 
 #define OLD_WEB_SERVER_URL		"http://dashboard.local.net/pi_thp.php?pi_temperature=%d&sensor1_temperature=%d&sensor1_humidity=%d&sensor2_temperature=%d&sensor2_pressure=%d"
-#define WEB_SERVER_URL		"http://homenest.local.net/php/record.php?key=2f4b1feae82a995b5cdcae5ba46726299d91e0a4&pi_temperature=%5.2f&sensor_temperature=%5.2f&sensor_pressure=%5.2f"
+#define WEB_SERVER_URL		"http://homenest.local.net/php/record.php?key=2f4b1feae82a995b5cdcae5ba46726299d91e0a4&pi_temperature=%5.2f&sensor_temperature1=%5.2f&sensor_pressure=%5.2f"
 #define MAX_RAW_DIFFERENCE	20
 
 #define	RHT03_PIN			7	// BCM GPIO #4
