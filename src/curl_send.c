@@ -2,14 +2,14 @@
 #include <curl/curl.h>
 #include "config.h"
 
-int sendInformation(int internalTemperature, int temperature1, int humidity, int temperature2, int pressure, int debug) {
+int sendInformation(int internalTemperature, int temperature, int pressure, int debug) {
     CURL *curl;
     CURLcode res;
 
     curl = curl_easy_init();
     if (curl) {
         char url[256];
-        sprintf(url, WEB_SERVER_URL, internalTemperature, temperature1, humidity, temperature2, pressure);
+        sprintf(url, WEB_SERVER_URL, internalTemperature / 100.0, temperature / 100.0, pressure / 100.0);
         if (debug) printf("Url = %s\n", url);
         curl_easy_setopt(curl, CURLOPT_URL, url);
         /* example.com is redirected, so we tell libcurl to follow redirection */

@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 
     if (sensor == SUCCESS)
     {
-        sendInformation(internalTemperature, 0, 0, sensor_temperature, sensor_pressure, debug);
+        sendInformation(internalTemperature, sensor_temperature, sensor_pressure, debug);
     }
 
     return EXIT_SUCCESS;
