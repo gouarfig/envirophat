@@ -2,6 +2,13 @@
 #ifndef PI_H
 #define PI_H
 
-void initPi();
+#define BMP280_I2C_ADDRESS BMP280_I2C_ADDRESS2
+#define BMP280_CHIP_ID BMP280_CHIP_ID3
+
+
+void initWiringPi();
+int getWiringPiI2CHandle();
+void initBMP280();
+
 
 #endif

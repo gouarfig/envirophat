@@ -142,35 +142,3 @@ int getBMP180TemperatureAtmosphericPressure(int *temperature, int *pressure, int
 
     return success;
 }
-
-int getBMP280TemperatureAtmosphericPressure(int *temperature, int *pressure, int debug)
-{
-    int fd = 0;
-
-    if ((fd = wiringPiI2CSetup(BMP280_I2CADDR)) < 0)
-    {
-        fprintf(stderr, "Unable to open I2C device: %s\n", strerror(errno));
-        exit(-1);
-    }
-
-    if (0x58 != wiringPiI2CReadReg8(fd, BMP280_CHIPID))
-    {
-        fprintf(stderr, "Unsupported chip\n");
-        exit(-2);
-    }
-
-    bmp280_load_calibration(fd);
-    wiringPiI2CWriteReg8(fd, BMP280_CONTROL, 0x3F);
-
-    float raw_temperature = bmp280_read_temperature(fd);
-    float raw_pressure = bmp280_read_pressure(fd);
-
-    if (debug) {
-        printf("Temperature\t:%5.2f C\n", raw_temperature);
-        printf("Pressure\t:%5.2f hPa\n",  raw_pressure / 100);
-    }
-    *temperature = (int)(raw_temperature * 100);
-    *pressure = (int)raw_pressure;
-
-    return 1;
-}
