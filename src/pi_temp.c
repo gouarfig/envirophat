@@ -9,8 +9,8 @@
 
 char *internalTemperatureSysFile = "/sys/class/thermal/thermal_zone0/temp";
 const int maxFileLength = 8192;
-const int minInternalTemperature = 0 * 100;	// Multiplied by 10, we store 38,52 as 3852
-const int maxInternalTemperature = 100 * 100;	// Multiplied by 10, we store 38,52 as 3852
+const int minInternalTemperature = 0 * 100;	// Multiplied by 100, we store 38,52 as 3852
+const int maxInternalTemperature = 100 * 100;	// Multiplied by 100, we store 38,52 as 3852
 
 int getFileSize(char *fileName)
 {
